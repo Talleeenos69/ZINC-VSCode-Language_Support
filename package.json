@@ -1,0 +1,33 @@
+{
+  "name": "zinc",
+  "displayName": "zinc",
+  "description": "zinc programming language support",
+  "icon": "icons/zinc-icon.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "zinc",
+      "aliases": ["zinc", "zinc"],
+      "extensions": [".zc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "zinc",
+      "scopeName": "source.zinc",
+      "path": "./syntaxes/zinc.tmLanguage.json"
+    }],
+    "icons": [
+      {
+        "src": "./icons/zinc-file.png",
+        "sizes": "32x32",
+        "extensions": [".zc"]
+      }
+    ]    
+  }
+}

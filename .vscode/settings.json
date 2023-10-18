@@ -1,0 +1,24 @@
+{
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "support.include.zinc"
+                ],
+                "settings": {
+                    "foreground": "#0000FF",  // Blue color
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.function.zinc"
+                ],
+                "settings": {
+                    "foreground": "#00FF00",  // Green color
+                    "fontStyle": ""
+                }
+            }
+        ]
+    }
+}

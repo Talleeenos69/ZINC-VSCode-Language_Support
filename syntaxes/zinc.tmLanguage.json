@@ -1,0 +1,143 @@
+{
+    "scopeName": "source.zinc",
+    "fileTypes": ["zc"],
+    "name": "Zinc",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#variables"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#loops"
+        },
+        {
+            "include": "#input"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#entities"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.zinc",
+                    "match": "//.*$"
+                },
+                {
+                    "name": "comment.block.zinc",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "variable.declaration.zinc",
+                    "match": "\\b(string|int|bool|const int|double|char)\\b"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.zinc",
+                    "match": "\\b(fn)\\s+[a-zA-Z_]+"
+                },
+                {
+                    "name": "function.call.zinc",
+                    "match": "\\b[a-zA-Z_]+\\s*\\([^\\)]*\\)\\s*;?"
+                },
+                {
+                    "name": "function.default.zinc",
+                    "match": "\\b(if|while|for|return|loop|main)\\b"
+                }
+            ]
+        },
+        "loops": {
+            "patterns": [
+                {
+                    "name": "loop.zinc",
+                    "begin": "\\b(loop)\\s*\\(.*?\\)\\s*\\{",
+                    "end": "\\}",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.loop.zinc"
+                        }
+                    }
+                }
+            ]
+        },
+        "input": {
+            "patterns": [
+                {
+                    "name": "input.zinc",
+                    "match": "\\b(input)\\s*\\(.*?\\)\\s*;?"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.zinc",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.zinc",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.zinc",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.zinc",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "entities": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.zinc",
+                    "match": "\\bfn\\s+[a-zA-Z_]+"
+                },
+                {
+                    "name": "entity.name.type.zinc",
+                    "match": "\\b(type|class)\\s+[a-zA-Z_]+"
+                },
+                {
+                    "name": "entity.name.tag.zinc",
+                    "match": "<[a-zA-Z_]+"
+                },
+                {
+                    "name": "entity.name.section.zinc",
+                    "match": "\\bsection\\s+[a-zA-Z_]+"
+                },
+                {
+                    "name": "entity.name.inherited-class.zinc",
+                    "match": "\\binherited-class\\s+[a-zA-Z_]+"
+                },
+                {
+                    "name": "entity.name.attribute-name.zinc",
+                    "match": "\\battribute-name\\s+[a-zA-Z_]+"
+                }
+            ]
+        }
+    }
+}
